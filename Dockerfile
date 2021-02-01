@@ -11,7 +11,7 @@ RUN pip install -U platformio && \
     mkdir -p /workspace && \
     mkdir -p /.platformio && \
     chmod a+rwx /.platformio \
-    pio platform install espressif8266
+    platformio platform install espressif8266
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
