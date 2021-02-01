@@ -7,10 +7,12 @@ LABEL app.name="platformio-docker" \
 RUN apt-get update -qq && \
     apt-get install -y -qq git
 
-RUN pip install -U platformio && \
-    mkdir -p /workspace && \
+RUN python3 -m pip install --upgrade pip setuptools
+RUN python3 -m pip install -U platformio
+
+RUN mkdir -p /workspace && \
     mkdir -p /.platformio && \
-    chmod a+rwx /.platformio \
+    chmod a+rwx /.platformio && \
     platformio platform install espressif8266
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
