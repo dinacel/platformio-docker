@@ -1,7 +1,7 @@
-FROM python:3.9.0-slim
+FROM python:3.9.2-slim
 
 LABEL app.name="platformio-docker" \
-    app.version="1.0.0" \
+    app.version="1.0.1" \
     maintainer="Dinacel <admin@dinacel.com>"
 
 RUN apt-get update -qq && \
